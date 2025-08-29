@@ -143,14 +143,14 @@ export class AppComponent implements OnInit{
   private configureWeb(): void {
     console.log("Using web configuration")
     let authConfig: AuthConfig = {
-      issuer: "http://localhost:8080/realms/master",
+      issuer: "https://tech.soappro.mg:8443/realms/soatech",
       redirectUri: "http://localhost:8100",
-      clientId: 'example-ionic-app',
+      clientId: 'soatech-mobile-application-id',
       responseType: 'code',
       scope: 'openid profile email offline_access',
       // Revocation Endpoint must be set manually when using Keycloak
       // See: https://github.com/manfredsteyer/angular-oauth2-oidc/issues/794
-      revocationEndpoint: "http://localhost:8080/realms/master/protocol/openid-connect/revoke",
+      revocationEndpoint: "https://tech.soappro.mg:8443/realms/soatech/protocol/openid-connect/revoke",
       showDebugInformation: true,
       requireHttps: false
     }
@@ -165,14 +165,14 @@ export class AppComponent implements OnInit{
   private configureIOS(): void {
     console.log("Using iOS configuration")
     let authConfig: AuthConfig = {
-      issuer: "http://localhost:8080/realms/master",
+      issuer: "https://tech.soappro.mg:8443/realms/soatech",
       redirectUri: "myschema://login", // needs to be a working universal link / url schema (setup in xcode)
-      clientId: 'example-ionic-app',
+      clientId: 'soatech-mobile-application-id',
       responseType: 'code',
       scope: 'openid profile email offline_access',
       // Revocation Endpoint must be set manually when using Keycloak
       // See: https://github.com/manfredsteyer/angular-oauth2-oidc/issues/794
-      revocationEndpoint: "http://localhost:8080/realms/master/protocol/openid-connect/revoke",
+      revocationEndpoint: "https://tech.soappro.mg:8443/realms/soatech/protocol/openid-connect/revoke",
       showDebugInformation: true,
       requireHttps: false
     }
